@@ -635,7 +635,7 @@ func (f *Uint64Flag) ApplyWithError(set *flag.FlagSet) error {
 	for _, name := range f.Names() {
 		if f.Destination != nil {
 			set.Uint64Var(f.Destination, name, f.Value, f.Usage)
-			return nil
+			continue
 		}
 		set.Uint64(name, f.Value, f.Usage)
 	}
